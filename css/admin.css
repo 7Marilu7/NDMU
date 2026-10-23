@@ -1,0 +1,511 @@
+body {
+    margin:0;
+    font-family:Poppins,sans-serif;
+
+    background:#FAFAFA;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:30px 15px;
+}
+
+.panel {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+}
+
+.login-box {
+    background: white;
+    padding: 70px 30px 70px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    border:1px solid #f4e7eb;
+    text-align:center;
+    animation:
+    entrada .5s ease;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #D8A7B1;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #D8A7B1;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #c98c9a;
+}
+
+button[type="button"] {
+    background: #bbb;
+}
+
+button[type="button"]:hover {
+    background: #999;
+}
+
+.acciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #666;
+}
+
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.servicio-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.servicio-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.servicio-item h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.servicio-item p {
+    margin: 0 0 12px;
+    color: #666;
+    font-size: 15px;
+}
+
+.servicio-item button {
+    width: auto;
+    min-width: 130px;
+    padding: 12px 20px;
+}
+
+.galeria-grid-admin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.galeria-admin-item {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 10px;
+}
+
+.galeria-admin-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: #ffffff1a;
+    border-radius: 12px;
+}
+
+/* checkbox centrado visualmente */
+.galeria-admin-item input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: scale(1.4);
+    z-index: 2;
+    cursor: pointer;
+}
+
+@media(max-width:768px) {
+
+    .panel,
+    .login-box {
+        padding: 25px;
+    }
+
+    .acciones {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .servicio-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .servicio-item img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .servicio-item button {
+        width: 100%;
+    }
+
+    .servicio-item h3 {
+        font-size: 16px;
+    }
+
+    .galeria-grid-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-admin-item img {
+        height: 200px;
+    }
+}
+
+#mensaje-exito {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #be9db6;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    z-index: 9999;
+    text-align: center;
+    animation: aparecer .4s ease, desaparecer .4s ease 2.6s forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Salida */
+@keyframes desaparecer {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-15px);
+        visibility: hidden;
+    }
+}
+
+@media(max-width:600px) {
+
+    #mensaje-exito {
+        width: 90%;
+        text-align: center;
+        font-size: 14px;
+        padding: 12px;
+        top: 15px;
+    }
+
+}
+.admin-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: nowrap;
+}
+
+.admin-header h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 42px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+     flex-shrink: 0;
+    font-size: 60px;
+    background: linear-gradient(135deg, #D8A7B1, #f0cad5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 25px rgba(216, 167, 177, .30);
+}
+
+.admin-header p {
+     margin: 5px 0 0 0;
+    color: #777;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0 35px;
+}
+
+.stat-card {
+    background: #faf7f8;
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #f1e4e8;
+    transition: .2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card h2 {
+    font-size: 40px;
+    margin: 0;
+    color: #D8A7B1;
+}
+
+.stat-card p {
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.acciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.accion-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+    border: none;
+}
+
+.accion-card div {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.accion-card h3 {
+    margin: 10px 0 5px;
+    color: #444;
+}
+
+.accion-card p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.accion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media(max-width:768px) {
+
+    .admin-header {
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .admin-header h1 {
+       margin: 0;
+        font-size: 28px;
+    }
+      .admin-header p {
+        font-size: 14px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        min-width: 70px;
+        font-size: 40px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .acciones {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 25px;
+    }
+}
+
+.login-box{
+    position: relative;
+}
+
+.volver{
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+.volver a {
+    text-decoration: none;
+    color: #9f7b86;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.volver a:hover {
+    color: #D8A7B1;
+}
+
+.login-avatar {
+    width: 110px;
+    height: 110px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D8A7B1, #f1ccd6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(216, 167, 177, .25);
+}
+
+.estado-admin {
+    font-size: 14px;
+    color: #67a46c;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #777;
+    font-size: 15px;
+    margin-top: -20px;
+    margin-bottom: 35px;
+}
+
+.login-box input {
+    background: #faf7f8;
+}
+
+.login-box button {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:768px) {
+
+    .login-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 45px;
+    }
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .volver {
+        left: 15px;
+        top: 15px;
+    }
+}

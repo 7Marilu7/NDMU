@@ -1,0 +1,27 @@
+
+# Archivos de configuración y secretos
+.env
+.env.*
+!.env.example
+config.local.php
+secrets.php
+
+# Copias de seguridad y registros
+*.sql
+*.sql.gz
+*.bak
+*.log
+*.old
+*.tmp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencias y herramientas locales
+/vendor/
+/node_modules/
+
+# Archivos temporales de PHP
+*.cache
